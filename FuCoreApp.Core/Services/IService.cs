@@ -16,8 +16,8 @@ namespace FuCoreApp.Core.Repository
 
         Task<T> SingleOrDefaultAsync(Expression<Func<T, bool>> predicate);
 
-        Task AddAsync(T entity);
-        Task AddRangeAsync(IEnumerable<T> entities);    //Toplu ekleme
+        Task<T> AddAsync(T entity);
+        Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);    //Toplu ekleme
 
         T Update(T entity);
         void Remove(T entity);

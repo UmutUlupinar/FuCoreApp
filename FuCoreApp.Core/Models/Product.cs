@@ -18,7 +18,8 @@ namespace FuCoreApp.Core.Models
 
         public bool IsDeleted { get; set; }
 
-        public string InnerBarcode { get; set; }
+        //dto ile filtrelendiği için kullanıcı buna null yollar. string null'a defult engellediğinden ? ile nullable yaparız.
+        public string? InnerBarcode { get; set; }
 
         public Category Category { get; set; }
 

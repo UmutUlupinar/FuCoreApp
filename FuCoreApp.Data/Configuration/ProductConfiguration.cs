@@ -19,6 +19,8 @@ namespace FuCoreApp.Data.Configuration
             builder.Property(s=>s.Stock).IsRequired();
             builder.Property(s=>s.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(s => s.InnerBarcode).HasMaxLength(50);
+            builder.Property(s => s.CreatedDate).HasColumnType("date");
+            builder.Property(s => s.UpdatedDate).HasColumnType("date");
             builder.ToTable("Products");
         }
     }

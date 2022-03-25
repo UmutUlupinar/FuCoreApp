@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuCoreApp.Api", "FuCoreApp.Api\FuCoreApp.Api.csproj", "{350747A2-6031-42D0-B164-60BAF40C5134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuCoreApp.Api", "FuCoreApp.Api\FuCoreApp.Api.csproj", "{350747A2-6031-42D0-B164-60BAF40C5134}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuCoreApp.Mvc", "FuCoreApp.Mvc\FuCoreApp.Mvc.csproj", "{FE475BD6-0108-4364-AAA3-893F92718662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuCoreApp.Mvc", "FuCoreApp.Mvc\FuCoreApp.Mvc.csproj", "{FE475BD6-0108-4364-AAA3-893F92718662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuCoreApp.Core", "FuCoreApp.Core\FuCoreApp.Core.csproj", "{B94D2C71-FAC1-4470-83C5-DB83B5B8D72B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuCoreApp.Core", "FuCoreApp.Core\FuCoreApp.Core.csproj", "{B94D2C71-FAC1-4470-83C5-DB83B5B8D72B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuCoreApp.Service", "FuCoreApp.Service\FuCoreApp.Service.csproj", "{507A0561-7A9C-48CB-A752-DE2EE03C27C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuCoreApp.Service", "FuCoreApp.Service\FuCoreApp.Service.csproj", "{507A0561-7A9C-48CB-A752-DE2EE03C27C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuCoreApp.Data", "FuCoreApp.Data\FuCoreApp.Data.csproj", "{659DB95E-B26B-4B84-89F9-AC2CF380457F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuCoreApp.Data", "FuCoreApp.Data\FuCoreApp.Data.csproj", "{659DB95E-B26B-4B84-89F9-AC2CF380457F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13484753-CD1E-48DF-BE13-E3CA8B24D3F9}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

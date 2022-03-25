@@ -16,11 +16,16 @@ namespace FuCoreApp.Core.Models
         public string Name { get; set; }
         public bool IsDeleted { get; set; }
 
+
+        //navigation property -Lazyloading
         public virtual ICollection<Product> Products { get; set; } =
-            new Collection<Product>();
+            new Collection<Product>();    // nedenini bilmiyorum
 
 
-
+        /*
+         Eager loading navige edilen tüm tabloyu ekler.
+         Lazy loading sadece ID (navigation column) ekler. virtual bunu sağlar.    
+         */
 
 
 
