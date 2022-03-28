@@ -50,7 +50,13 @@ namespace FuCoreApp.Api.Controllers
 
         public IActionResult Update(ProductDto proDto)
         {
-            var pro = _proService.Update(_mapper.Map<Product>(proDto));
+            Task<Product> proBul = _proService.GetByIdAsync(proDto.ID);
+            proBul.Result.Name= proDto.Name;
+            proBul.Result.Stock= proDto.Stock;
+            proBul.Result.Price= proDto.Price;
+            proBul.Result.CategoryId= proDto.CategoryId;
+
+            var pro = _proService.Update(proBul.Result);
             return NoContent();
         }
 

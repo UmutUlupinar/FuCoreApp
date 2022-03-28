@@ -8,7 +8,7 @@ namespace FuCoreApp.Api.Extensions
     public static class UseCustomExceptionHandler
     {
         //Extension'lar static yapıdadır. static'ler new'lenmeye gerek duymaz. hızlıdır ama çok yer kaplar işi bitince kapatılmalı.
-       // çaışması için middleware eklenmeli. program.cs
+       // çalışması için middleware eklenmeli. program.cs
         public static void UseCustomException(this IApplicationBuilder app)
         {
             app.UseExceptionHandler(config =>

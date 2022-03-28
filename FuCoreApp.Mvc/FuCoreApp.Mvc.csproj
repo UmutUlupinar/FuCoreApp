@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FuCoreApp.Core\FuCoreApp.Core.csproj" />
+    <ProjectReference Include="..\FuCoreApp.Data\FuCoreApp.Data.csproj" />
+    <ProjectReference Include="..\FuCoreApp.Service\FuCoreApp.Service.csproj" />
   </ItemGroup>
 
 </Project>

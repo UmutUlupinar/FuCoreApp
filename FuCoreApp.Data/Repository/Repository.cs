@@ -1,4 +1,5 @@
-﻿using FuCoreApp.Core.Repository;
+﻿using FuCoreApp.Core.Models;
+using FuCoreApp.Core.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,29 @@ namespace FuCoreApp.Data.Repository
         public async Task AddAsync(T entity)
         {
             await _dbset.AddAsync(entity);
+            if (entity is BaseEntity o) {
+                DateTime now = DateTime.Now;
+                o.CreatedBy = 1;
+                o.CreatedDate = now;
+                o.UpdatedDate = now;
+                o.UpdatedBy = 1;
+            }
         }
 
         public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbset.AddRangeAsync(entities);
+            foreach(var entity in entities)
+            {
+                if (entity is BaseEntity o)
+                {
+                    DateTime now=DateTime.Now;
+                    o.CreatedBy = 1;
+                    o.CreatedDate = now;
+                    o.UpdatedDate = now;
+                    o.UpdatedBy = 1;
+                }
+            }
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -58,6 +77,12 @@ namespace FuCoreApp.Data.Repository
         public T Update(T entity)
         {
             _db.Entry(entity).State=EntityState.Modified;
+          if(entity is BaseEntity o)
+            {
+                o.UpdatedBy=1;
+                o.UpdatedDate=DateTime.Now;
+            }
+
             return entity;
         }
 

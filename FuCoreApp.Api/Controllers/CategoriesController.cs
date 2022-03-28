@@ -47,7 +47,12 @@ namespace FuCoreApp.Api.Controllers
         [HttpPut]
         public IActionResult Update(CategoryDto catDto)
         {
-            var cat = _catService.Update(_mapper.Map<Category>(catDto));
+            //catDto'dan kullanıcı kaynaklı update geldi. Catbul'a ise update metodu üzerinden date & by özellikleri eklendi.
+            //catbul üzerinden update gerçekleşip cat'e atıldı.
+
+            Task<Category> catBul = _catService.GetByIdAsync(catDto.ID);
+            catBul.Result.Name=catDto.Name;
+            var cat = _catService.Update(catBul.Result);
             //return NoContent();
             return Ok(_mapper.Map<CategoryDto>(cat));
         }

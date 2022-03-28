@@ -31,39 +31,39 @@ namespace FuCoreApp.Data
 
 
         //save 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            var datas = ChangeTracker.Entries<BaseEntity>();
-            foreach(var x in datas)
-            {
-                if (x.State == EntityState.Added)
-                {
-                    x.Entity.CreatedBy = 1;
-                    x.Entity.CreatedDate= DateTime.Now;
+        //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        //{
+        //    var datas = ChangeTracker.Entries<BaseEntity>();
+        //    foreach(var x in datas)
+        //    {
+        //        if (x.State == EntityState.Added)
+        //        {
+        //            x.Entity.CreatedBy = 1;
+        //            x.Entity.CreatedDate= DateTime.Now;
 
-                }
-                else if (x.State == EntityState.Modified)
-                {
-                    x.Entity.UpdatedBy = 1;
-                    x.Entity.UpdatedDate= DateTime.Now;
-                }
-            }
-            return base.SaveChangesAsync(cancellationToken);
-        }
+        //        }
+        //        else if (x.State == EntityState.Modified)
+        //        {
+        //            x.Entity.UpdatedBy = 1;
+        //            x.Entity.UpdatedDate= DateTime.Now;
+        //        }
+        //    }
+        //    return base.SaveChangesAsync(cancellationToken);
+        //}
 
-        public override int SaveChanges()
-        {
-            var datas = ChangeTracker.Entries<BaseEntity>();
-            foreach (var x in datas)
-            {
-                if (x.State == EntityState.Modified)
-                {
-                    x.Entity.UpdatedBy = 1;
-                    x.Entity.UpdatedDate = DateTime.Now;
-                }
-            }
-            return base.SaveChanges();
-        }
+        //public override int SaveChanges()
+        //{
+        //    var datas = ChangeTracker.Entries<BaseEntity>();
+        //    foreach (var x in datas)
+        //    {
+        //        if (x.State == EntityState.Modified)
+        //        {                  
+        //            x.Entity.UpdatedBy = 1;
+        //            x.Entity.UpdatedDate = DateTime.Now;
+        //        }
+        //    }
+        //    return base.SaveChanges();
+        //}
 
     }
 }

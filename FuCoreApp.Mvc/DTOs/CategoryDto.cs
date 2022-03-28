@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FuCoreApp.Api.DTOs
+namespace FuCoreApp.Mvc.DTOs
 {
     public class CategoryDto
     {
