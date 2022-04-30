@@ -40,6 +40,25 @@ namespace FuCoreApp.Mvc.Controllers
             return View(categoryDto);
         }
    
+        [HttpGet]
 
+        public async Task<IActionResult> Update(int id)
+        {
+            var category = await _categoryApiService.GetByIdAsync(id);
+            return View(_mapper.Map<CategoryDto>(category));
+        }
+
+        [HttpPost]
+       public async Task<IActionResult> Update(CategoryDto categoryDto) 
+        {
+            await _categoryApiService.Update(categoryDto);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _categoryApiService.Remove(id);
+            return RedirectToAction("Index");
+        }
     }
 }

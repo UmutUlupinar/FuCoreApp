@@ -1,17 +1,20 @@
-﻿@model IEnumerable<CategoryDto>
+﻿@model IEnumerable<ProductDto>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Api'den gelen Kategoriler Listesi</h1>
+<h1>Api'den gelen ürünler listesi</h1>
 
-<a class="btn btn-primary mb-3" asp-action="Create">Kategori Ekle</a>
+<a class="btn btn-primary mb-3" asp-action="Create">Ürün Ekle</a>
 
 <table class="table table-bordered table-stripped">
     <thead>
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Kategori ID</th>
             <th>Islemler</th>
         </tr>
     </thead>
@@ -21,6 +24,9 @@
             <tr>
                 <td>@item.ID</td>
                 <td>@item.Name</td>
+                <td>@item.Stock</td>
+                <td>@item.Price</td>
+                <td>@item.CategoryId</td>
                 <td>
                     <a class="btn btn-warning btn-sm" asp-action="Update" asp-route-Id="@item.ID">Guncelle</a>
                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-Id="@item.ID" onclick="return confirm('Bu kaydi silmek istediginize eminmisiniz? Kayit kalici olarak silinecektir!!!')">Sil</a>
@@ -31,5 +37,3 @@
 
     </tbody>
 </table>
-
-
