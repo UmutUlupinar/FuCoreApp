@@ -1,32 +1,33 @@
-2.gün
+N-TIER PROJECT
+()
 
-APİ KATMANI
+APÄ° KATMANI
   ---DTO
-  Data transfer object. bildiğin View MOdel. BU dto işlemleri ile gelen entity verilerini kullanıcı
-  gerkesinimlerine göre sadeleştirip yollarız.BU işlemleri için mapping bize yardım eder.
-  DTO dosyası oluşturulup içinde Product , Category sınıflarına ait propertyler ve propertieslerin
-  kuralları belirlendi.Categorywithproduct & productWithCategory Dto classları ile category product
+  Data transfer object. bildiÄŸin View MOdel. BU dto iÅŸlemleri ile gelen entity verilerini kullanÄ±cÄ±
+  gerkesinimlerine gÃ¶re sadeleÅŸtirip yollarÄ±z.BU iÅŸlemleri iÃ§in mapping bize yardÄ±m eder.
+  DTO dosyasÄ± oluÅŸturulup iÃ§inde Product , Category sÄ±nÄ±flarÄ±na ait propertyler ve propertieslerin
+  kurallarÄ± belirlendi.Categorywithproduct & productWithCategory Dto classlarÄ± ile category product
   navige edildi.
   ---Mapping
-  Mapping klasörü oluşturludu içinde açtığımız mapProfile sınıfı ile dto'ların mapping işlemi yapıldı.
-***NUGET'ten indirilen AutoMapped.dep.ınj package'ı indirildi.
+  Mapping klasÃ¶rÃ¼ oluÅŸturludu iÃ§inde aÃ§tÄ±ÄŸÄ±mÄ±z mapProfile sÄ±nÄ±fÄ± ile dto'larÄ±n mapping iÅŸlemi yapÄ±ldÄ±.
+***NUGET'ten indirilen AutoMapped.dep.Ä±nj package'Ä± indirildi.
   ---Controller
-  Categorycontroller Controller'ı oluşturuldu. api controller içinde ICategoryService _catService & IMapper _mapper;
-  nesneleri oluşturuldu.Constructor metodu ile bu nesnelere atma yapıldı.Constructor metodunun parametresi.....
-  kategorilerin hepsini aldığımız ve tek birini ıd parametresi ile aldığımız get metodtları oluşturldu.
+  Categorycontroller Controller'Ä± oluÅŸturuldu. api controller iÃ§inde ICategoryService _catService & IMapper _mapper;
+  nesneleri oluÅŸturuldu.Constructor metodu ile bu nesnelere atma yapÄ±ldÄ±.Constructor metodunun parametresi.....
+  kategorilerin hepsini aldÄ±ÄŸÄ±mÄ±z ve tek birini Ä±d parametresi ile aldÄ±ÄŸÄ±mÄ±z get metodtlarÄ± oluÅŸturldu.
 
   CORE KATMANI
 
 
   DATA KATMANI
 
-  Unitofwork classı önceki gün eklenmemişti. o eklendi. IUnitofWork Core katmanında. Unitofwork classı
-  data katmanında olma sebebi çalışma alanının database ile direk ilişkili olmasıdır.Unitofwork database 
-  son dokunuşunu yapıldığı yani sahiden değiştirldiği yerdir.
+  Unitofwork classÄ± Ã¶nceki gÃ¼n eklenmemiÅŸti. o eklendi. IUnitofWork Core katmanÄ±nda. Unitofwork classÄ±
+  data katmanÄ±nda olma sebebi Ã§alÄ±ÅŸma alanÄ±nÄ±n database ile direk iliÅŸkili olmasÄ±dÄ±r.Unitofwork database 
+  son dokunuÅŸunu yapÄ±ldÄ±ÄŸÄ± yani sahiden deÄŸiÅŸtirldiÄŸi yerdir.
 
-  SERVİCE KATMANI
+  SERVÄ°CE KATMANI
 
-  Core katmanını bu  katman ile bağladık Çünkü buradaki service classlarının interfaceleri çekirdekte.
+  Core katmanÄ±nÄ± bu  katman ile baÄŸladÄ±k Ã‡Ã¼nkÃ¼ buradaki service classlarÄ±nÄ±n interfaceleri Ã§ekirdekte.
   ---CategoryService
 
 
@@ -37,9 +38,9 @@ Controller eklendi.
 	CategoriesController
 
 
-	3. gün
 
-	Categoricontroller 'da put ve delete methodları yapıldı.
-	Product controller'da get post put ve delete metodları yapıldı. 
-	Product sınıfında InnerBarcode nesnesi kullanıcıdan alınmayan bir nesnedir. string tipinde olduğu için Nullable hatası
-	düzeltildi.
+
+	Categoricontroller 'da put ve delete methodlarÄ± yapÄ±ldÄ±.
+	Product controller'da get post put ve delete metodlarÄ± yapÄ±ldÄ±. 
+	Product sÄ±nÄ±fÄ±nda InnerBarcode nesnesi kullanÄ±cÄ±dan alÄ±nmayan bir nesnedir. string tipinde olduÄŸu iÃ§in Nullable hatasÄ±
+	dÃ¼zeltildi.
