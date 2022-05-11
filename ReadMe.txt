@@ -17,7 +17,7 @@ APİ KATMANI
   kategorilerin hepsini aldığımız ve tek birini ıd parametresi ile aldığımız get metodtları oluşturldu.
 
   CORE KATMANI
-
+ İşlemlerin çekirdeğidir. Interfaceler burada. Modeller buradadır.
 
   DATA KATMANI
 
