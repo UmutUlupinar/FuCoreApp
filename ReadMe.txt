@@ -20,7 +20,8 @@ APİ KATMANI
  İşlemlerin çekirdeğidir. Interfaceler burada. Modeller buradadır.
 
   DATA KATMANI
-
+  
+  Database ilişkisini burada kurulur. Seed data eklenir, tablolar konfigure edilir. Repository'ler burada oluşturulur.çünkü database ile dolaysız ilişki içindedirler.
   Unitofwork classı önceki gün eklenmemişti. o eklendi. IUnitofWork Core katmanında. Unitofwork classı
   data katmanında olma sebebi çalışma alanının database ile direk ilişkili olmasıdır.Unitofwork database 
   son dokunuşunu yapıldığı yani sahiden değiştirldiği yerdir.
