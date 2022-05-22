@@ -1,47 +1,43 @@
 N-TIER PROJECT
 ()
 
-APİ KATMANI
-  ---DTO
-  Data transfer object. bildiğin View MOdel. BU dto işlemleri ile gelen entity verilerini kullanıcı
-  gerkesinimlerine göre sadeleştirip yollarız.BU işlemleri için mapping bize yardım eder.
-  DTO dosyası oluşturulup içinde Product , Category sınıflarına ait propertyler ve propertieslerin
-  kuralları belirlendi.Categorywithproduct & productWithCategory Dto classları ile category product
-  navige edildi.
-  ---Mapping
-  Mapping klasörü oluşturludu içinde açtığımız mapProfile sınıfı ile dto'ların mapping işlemi yapıldı.
-***NUGET'ten indirilen AutoMapped.dep.ınj package'ı indirildi.
-  ---Controller
-  Categorycontroller Controller'ı oluşturuldu. api controller içinde ICategoryService _catService & IMapper _mapper;
-  nesneleri oluşturuldu.Constructor metodu ile bu nesnelere atama yapıldı.Constructor metodunun parametresi.....
-  kategorilerin hepsini aldığımız ve tek birini ıd parametresi ile aldığımız get metotları oluşturldu.
+API;
 
-  CORE KATMANI
- İşlemlerin çekirdeğidir. Interfaceler burada. Modeller buradadır.
+ MVC katmannı yani arayüzümüz apiden gelecek datayı kullanacaktır.
+DTOs sınıfları ile kullanıcıya gösterilecek verileri tutacaktır.
+Filters sınıfları ile kullanıcıya filtreyle errorları tutacaktır.
+Extensions ile hataları sadece koduyla değil spesifik şekilde kullanıcya ulaştırır.
+MapProfile ile classlar ile dto'ları arasındaki mapi sağlar.
 
-  DATA KATMANI
-  
-  Database ilişkisini burada kurulur. Seed data eklenir, tablolar konfigure edilir. Repository'ler burada oluşturulur.çünkü database ile dolaysız ilişki içindedirler.
-  Unitofwork classı önceki gün eklenmemişti. o eklendi. IUnitofWork Core katmanında. Unitofwork classı
-  data katmanında olma sebebi çalışma alanının database ile direk ilişkili olmasıdır.Unitofwork database 
-  son dokunuşunu yapıldığı yani sahiden değiştirldiği yerdir.
+Api/Controllers
+
+ Service katmanından gelecek ve mappingden gelecek nesneler DI ile inject edilir.Service içindeki
+metotların döndürdüğü değer dto'ya sokulur ve kullanıcıya hazır vaziyette döndürülür.
+Mesela kullanıcıdan gelecek verileri ise tekrar tersine map ile dto'dan çıkarılır ve service katmanından 
+geçirilir. Sonuç datası elde edilir ve Dto'ya sokulur ve kullaıcıya hazır vaziyette döndürülür.
+
+Api/program.cs
+
+ İş katmanlarındaki (Repository ve Service) classların interfaceleri ile bağlantı için addscoped kullanılır.
+Mapper içinde automapper metodu kullanılır.
+
+CORE;
+
+Model ve Interface'leri içerir. İşin çekirdeğidir. :Shared'de denebilir.
+
+DATA;
+
+ Database ilişkisi burada kurulur. Seed data eklenir, tablolar konfigure edilir.Repository'ler burada 
+oluşturulur.Çünkü database ile dolaysız ilişki içindedirler.Unitofwork database son dokunuşunu yapıldığı 
+yani sahiden değiştirldiği yerdir.Unitofwork classı data katmanında olma sebebi çalışma alanının database
+ile direk ilişkili olmasıdır. UnitofWork ve Repository database ile işlem yapan claslarımızdır.
+Seed ve Configuration sınıflarımız ise code first ile olşturlan tablolar için konfigüreler ve default 
+datalar içerir.
+Bu classlardaki işlemlerin hepsini DbContext'ten kalıtım alan AppDbContext sınıfımızda da yapabilinir
+fakat bu şekilde tüm diyagram solid'e uygun olmakla beraber database kısmına müdahale kolaylığı sağlar.
+
 
   SERVİCE KATMANI
 
   Core katmanını bu  katman ile bağladık Çünkü buradaki service classlarının interfaceleri çekirdekte.
   ---CategoryService
-
-
-
-
-Controller eklendi. 
-
-	CategoriesController
-
-
-
-
-	Categoricontroller 'da put ve delete methodları yapıldı.
-	Product controller'da get post put ve delete metodları yapıldı. 
-	Product sınıfında InnerBarcode nesnesi kullanıcıdan alınmayan bir nesnedir. string tipinde olduğu için Nullable hatası
-	düzeltildi.
