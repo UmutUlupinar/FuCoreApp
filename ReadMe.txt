@@ -13,8 +13,8 @@ APİ KATMANI
 ***NUGET'ten indirilen AutoMapped.dep.ınj package'ı indirildi.
   ---Controller
   Categorycontroller Controller'ı oluşturuldu. api controller içinde ICategoryService _catService & IMapper _mapper;
-  nesneleri oluşturuldu.Constructor metodu ile bu nesnelere atma yapıldı.Constructor metodunun parametresi.....
-  kategorilerin hepsini aldığımız ve tek birini ıd parametresi ile aldığımız get metodtları oluşturldu.
+  nesneleri oluşturuldu.Constructor metodu ile bu nesnelere atama yapıldı.Constructor metodunun parametresi.....
+  kategorilerin hepsini aldığımız ve tek birini ıd parametresi ile aldığımız get metotları oluşturldu.
 
   CORE KATMANI
  İşlemlerin çekirdeğidir. Interfaceler burada. Modeller buradadır.
