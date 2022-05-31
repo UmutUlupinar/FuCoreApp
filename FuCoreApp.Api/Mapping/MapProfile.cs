@@ -23,3 +23,5 @@ namespace FuCoreApp.Api.Mapping
         }
     }
 }
+
+//mapping solutions
